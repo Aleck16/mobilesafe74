@@ -52,13 +52,13 @@ public class Setup2Activity extends Activity {
                     //6.1，获取对应的sim卡序列号TelephoneManager
                     TelephonyManager manager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
                     //6.2,获取sim卡的序列号
-                    String simSerialNumber=manager.getSimSerialNumber();
+                    String simSerialNumber = manager.getSimSerialNumber();
                     //6.3存储
-                    SpUtil.putString(getApplicationContext(),ConstantValue.SIM_NUMBER,simSerialNumber);
+                    SpUtil.putString(getApplicationContext(), ConstantValue.SIM_NUMBER, simSerialNumber);
 
                 } else {
                     //7,将存储序列卡号的节点从sp中删除
-                    SpUtil.remove(getApplicationContext(),ConstantValue.SIM_NUMBER);
+                    SpUtil.remove(getApplicationContext(), ConstantValue.SIM_NUMBER);
                 }
 
             }
