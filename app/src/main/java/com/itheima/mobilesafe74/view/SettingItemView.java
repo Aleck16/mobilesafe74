@@ -88,7 +88,7 @@ public class SettingItemView extends RelativeLayout {
     }
 
     /**
-     * @param isCheck 是否作为开启的变量，由点击过程中去做传递
+     * @param isCheck 作为是否开启的变量，由点击过程中去做传递
      */
     public void setCheck(boolean isCheck) {
         //当前条目在选中的过程中，cb_box选中状态也在跟随（ischeck）变化
