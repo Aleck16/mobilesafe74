@@ -11,7 +11,10 @@ import android.view.View;
 import com.itheima.mobilesafe74.R;
 import com.itheima.mobilesafe74.utils.ConstantValue;
 import com.itheima.mobilesafe74.utils.SpUtil;
+import com.itheima.mobilesafe74.utils.ToastUtil;
 import com.itheima.mobilesafe74.view.SettingItemView;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by Aleck_ on 2016/10/14.
@@ -66,10 +69,18 @@ public class Setup2Activity extends Activity {
     }
 
     public void nextPage(View view) {
-        Intent intent = new Intent(getApplicationContext(), Setup3Activity.class);
-        startActivity(intent);
+        String serialNumber = SpUtil.getString(this, ConstantValue.SIM_NUMBER, "");
+        if(!TextUtils.isEmpty(serialNumber)){
+            Intent intent = new Intent(getApplicationContext(), Setup3Activity.class);
+            startActivity(intent);
+            finish();
 
-        finish();
+            //开启平移动画
+            overridePendingTransition(R.animator.next_in_anim,R.animator.next_out_anim);
+        }else {
+            ToastUtil.show(this,"请绑定SIM卡");
+        }
+
     }
 
     public void prePage(View view) {
@@ -77,5 +88,8 @@ public class Setup2Activity extends Activity {
         startActivity(intent);
 
         finish();
+
+        //开启平移动画
+        overridePendingTransition(R.animator.pre_in_anim,R.animator.pre_out_anim);
     }
 }

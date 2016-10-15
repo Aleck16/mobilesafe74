@@ -22,5 +22,8 @@ public class Setup1Activity extends Activity {
         startActivity(intent);
 
         finish();
+
+        //开启平移动画
+        overridePendingTransition(R.animator.next_in_anim,R.animator.next_out_anim);
     }
 }

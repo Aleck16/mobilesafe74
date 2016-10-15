@@ -12,7 +12,8 @@
         android:id="@+id/cb_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="您没有开启保护" />
+        android:text="您没有开启保护"
+        android:textSize="18sp" />
 
     <!--让内部点的空间水平剧中-->
     <LinearLayout
