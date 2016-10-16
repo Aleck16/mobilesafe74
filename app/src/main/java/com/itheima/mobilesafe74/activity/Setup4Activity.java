@@ -70,7 +70,6 @@ public class Setup4Activity extends Activity {
         }else{
             ToastUtil.show(this,"请开启防盗保护");
         }
-
     }
 
     public void prePage(View view) {
