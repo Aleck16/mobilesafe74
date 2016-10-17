@@ -15,7 +15,7 @@ import com.itheima.mobilesafe74.utils.ToastUtil;
 /**
  * Created by Aleck_ on 2016/10/14.
  */
-public class Setup4Activity extends Activity {
+public class Setup4Activity extends BaseSetupActivity {
 
     private CheckBox cb_box;
 
@@ -26,6 +26,7 @@ public class Setup4Activity extends Activity {
 
         initUI();
     }
+
 
     private void initUI() {
         cb_box = (CheckBox) findViewById(R.id.cb_box);
@@ -55,7 +56,9 @@ public class Setup4Activity extends Activity {
 
     }
 
-    public void nextPage(View view) {
+
+    @Override
+    protected void showNextPage() {
         boolean open_security = SpUtil.getBoolean(this, ConstantValue.OPEN_SECURITY, false);
         if(open_security){
             Intent intent = new Intent(getApplicationContext(), SetupOverActivity.class);
@@ -72,7 +75,8 @@ public class Setup4Activity extends Activity {
         }
     }
 
-    public void prePage(View view) {
+    @Override
+    protected void showPrePage() {
         Intent intent = new Intent(getApplicationContext(), Setup3Activity.class);
         startActivity(intent);
 

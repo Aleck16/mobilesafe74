@@ -16,7 +16,7 @@ import com.itheima.mobilesafe74.utils.ToastUtil;
 /**
  * Created by Aleck_ on 2016/10/14.
  */
-public class Setup3Activity extends Activity {
+public class Setup3Activity extends BaseSetupActivity{
 
     private EditText et_phone_number;
     private Button bt_select_number;
@@ -28,6 +28,7 @@ public class Setup3Activity extends Activity {
 
         initUI();
     }
+
 
     private void initUI() {
         //显示电话号码的输入框
@@ -63,7 +64,8 @@ public class Setup3Activity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public void nextPage(View view) {
+    @Override
+    protected void showNextPage() {
         //点击按钮以后，需要获取输入框中的联系人，再做下一页操作
         String phone = et_phone_number.getText().toString();
 
@@ -83,10 +85,10 @@ public class Setup3Activity extends Activity {
         } else {
             ToastUtil.show(this, "请输入电话号码");
         }
-
     }
 
-    public void prePage(View view) {
+    @Override
+    protected void showPrePage() {
         Intent intent = new Intent(getApplicationContext(), Setup2Activity.class);
         startActivity(intent);
 
